@@ -1,0 +1,35 @@
+{
+  "name": "xclap-cli",
+  "version": "0.1.0",
+  "description": "CLI invoker for xclap Javascript task executor/build tool",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jchip/xclap-cli.git"
+  },
+  "keywords": [
+    "build",
+    "system",
+    "tool",
+    "clap",
+    "xclap",
+    "javascript",
+    "task",
+    "executor",
+    "make"
+  ],
+  "bin": {
+    "clap": "clap.js",
+    "xclap": "clap.js"
+  },
+  "scripts": {},
+  "author": "Joel Chen <joel123@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jchip/xclap-cli/issues"
+  },
+  "homepage": "https://github.com/jchip/xclap-cli",
+  "dependencies": {
+    "require-at": "^1.0.0"
+  }
+}
