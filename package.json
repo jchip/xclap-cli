@@ -1,6 +1,6 @@
 {
   "name": "xclap-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CLI invoker for xclap Javascript task executor/build tool",
   "main": "index.js",
   "repository": {
