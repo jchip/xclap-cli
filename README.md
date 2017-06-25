@@ -23,6 +23,22 @@ ie:
 $ clap build
 ```
 
+# Auto Completion
+
+Auto completion is available for [bash] and [zsh].
+
+To setup, add the following line to your `~/.bashrc` or `~/.zshrc` accordingly:
+
+```bash
+# Bash, ~/.bashrc
+eval "$(clap --completion=bash)"
+```
+
+```zsh
+# Zsh, ~/.zshrc
+eval "$(clap --completion=zsh)"
+```
+
 [xclap]: https://github.com/jchip/xclap
 
 [npm-image]: https://badge.fury.io/js/xclap-cli.svg

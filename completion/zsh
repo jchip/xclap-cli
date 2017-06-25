@@ -1,0 +1,40 @@
+#!/bin/zsh
+
+# Copied from gruntjs
+# grunt-cli
+# http://gruntjs.com/
+#
+# Copyright (c) 2016 Tyler Kellen, contributors
+# Licensed under the MIT license.
+# https://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+
+# Usage:
+#
+# To enable zsh <tab> completion for grunt, add the following line (minus the
+# leading #, which is the zsh comment character) to your ~/.zshrc file:
+#
+# eval "$(clap --completion=zsh)"
+
+# Enable zsh autocompletion.
+function _clap_completion() {
+  # The currently-being-completed word.
+  local cur="${words[@]}"
+  # get tasks.
+  # If starts with / then list full namespaces
+  local compls=""
+  if [[ "$cur" == /* ]]; then
+    compls="$(clap -q -l -ff)"
+  elif [[ "$cur" == -* ]]; then
+    compls="$(clap --options)"
+  else
+  # otherwise just the task names only
+    compls="$(clap -q -l)"
+  fi
+  # Turn compls into an array to of completions.
+  completions=(${=compls})
+  # Tell complete what stuff to show.
+  compadd -- $completions
+
+}
+
+compdef _clap_completion clap
