@@ -52,3 +52,7 @@ eval "$(clap --completion=zsh)"
 [daviddm-dev-image]: https://david-dm.org/jchip/xclap-cli/dev-status.svg
 
 [daviddm-dev-url]: https://david-dm.org/jchip/xclap-cli?type=dev
+
+[bash]: https://www.gnu.org/software/bash/
+
+[zsh]: http://www.zsh.org/
