@@ -2,7 +2,7 @@
   "name": "xclap-cli",
   "version": "0.1.2",
   "description": "CLI invoker for xclap Javascript task executor/build tool",
-  "main": "index.js",
+  "main": "clap.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/jchip/xclap-cli.git"
