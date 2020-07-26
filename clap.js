@@ -6,13 +6,30 @@ const requireAt = require("require-at");
 const Path = require("path");
 const Fs = require("fs");
 
+function isXarcRun() {
+  try {
+    const cwdRequire = requireAt(process.cwd());
+    return Boolean(cwdRequire.resolve("@xarc/run/package.json"));
+  } catch (err) {
+    return false;
+  }
+}
+
 function findXclapPath() {
   try {
     const cwdRequire = requireAt(process.cwd());
     return Path.dirname(cwdRequire.resolve("xclap/package.json"));
   } catch (err) {
     console.log("Cannot find the module xclap at CWD", process.cwd());
-    console.log("Please install it with 'npm install xclap'");
+
+    if (isXarcRun()) {
+      console.log(
+        "The module @xarc/run is detected in your project, maybe you mean to use the command xrun?"
+      );
+    } else {
+      console.log("Please install it with 'npm install xclap'");
+    }
+
     if (err.code !== "MODULE_NOT_FOUND") {
       console.log("\nActual Error", err);
     }
