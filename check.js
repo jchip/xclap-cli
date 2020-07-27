@@ -20,6 +20,11 @@ xclap-cli is only intended to be installed globally:
 
 If you want to use the xclap task runner in your project, please install the xclap package.
 
+Also, xclap has been renamed to @xarc/run and xclap-cli to @xarc/run-cli.  Please use that:
+
+- @xarc/run:     https://www.npmjs.com/package/@xarc/run
+- @xarc/run-cli: https://www.npmjs.com/package/@xarc/run-cli
+
 `
   );
   process.exit(1);
