@@ -38,6 +38,6 @@
   "homepage": "https://github.com/jchip/xclap-cli",
   "dependencies": {
     "is-installed-globally": "^0.3.2",
-    "require-at": "^1.0.0"
+    "require-at": "^1.0.6"
   }
 }
