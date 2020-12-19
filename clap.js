@@ -53,14 +53,19 @@ xclap: ${runners.xclap.path}
 The file 'xrun-tasks${xrunExt}' is found in your project.
 ${msgWithXrun}
 ${msgInstallXrunCli}
+
+=== Invoking as xrun ===
 `);
-          process.exit(1);
+          require("./xrun");
+          return false;
         }
 
         // @xarc/run found but no xrun-tasks - show message about xrun
         console.log(`
 ${msgWithXrun}
 ${msgInstallXrunCli}
+
+a
 `);
       }
     }
@@ -78,8 +83,12 @@ Cannot find the module xclap with require at CWD`,
         `
 ${msgWithXrun}
 ${msgInstallXrunCli}
+
+=== Invoking as xrun ===
 `
       );
+      require("./xrun");
+      return false;
     } else if ((xrunExt = hasXrunTaskFile())) {
       console.log(`The file 'xrun-tasks${xrunExt}' is found in your project.
 You need @xarc/run for that.  Please install it with 'npm i --save-dev @xarc/run'
@@ -127,5 +136,9 @@ function checkCompletion() {
   return false;
 }
 
-checkCompletion();
-require(Path.join(findXclapPath(), "cli/clap"))();
+const xclapPath = findXclapPath();
+
+if (xclapPath) {
+  checkCompletion();
+  require(Path.join(xclapPath, "cli/clap"))();
+}
