@@ -65,8 +65,10 @@ ${msgInstallXrunCli}
 ${msgWithXrun}
 ${msgInstallXrunCli}
 
-a
+=== assuming @xarc/run can be used => invoking as xrun ===
 `);
+        require("./xrun");
+        return false;
       }
     }
     return runners.xclap.path;

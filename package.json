@@ -40,5 +40,8 @@
   "dependencies": {
     "is-installed-globally": "^0.3.2",
     "require-at": "^1.0.6"
+  },
+  "devDependencies": {
+    "which": "^2.0.2"
   }
 }
